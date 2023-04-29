@@ -1,10 +1,13 @@
-import moment from "moment/moment";
 import React from "react";
+import { Link } from "react-router-dom";
+import moment from "moment/moment";
+// import React from "react";
 import Marquee from "react-fast-marquee";
 
-const Home = () => {
-  return (
-    <div className="py-10 px-4">
+const Header = () => {
+  return (<> 
+    
+     <div className="py-10 px-4">
       <div className="text-center mt-4">
         {moment().format("MMMM Do YYYY, h:mm:ss a")}
       </div>
@@ -22,7 +25,28 @@ const Home = () => {
         </Marquee>
       </div>
     </div>
+
+    <div className="flex justify-between mx-10 py-2">
+      <div>
+        <h3>Tailwind BackEnd</h3>
+      </div>
+      <div>
+        <ul className="flex space-x-6">
+          <li>
+            <Link>Home</Link>
+          </li>
+          <li>
+            <Link>Product</Link>
+          </li>
+          <li>
+            <Link>LogIn</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    </>
   );
 };
 
-export default Home;
+export default Header;
